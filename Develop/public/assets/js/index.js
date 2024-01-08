@@ -53,6 +53,7 @@ const deleteNote = (id) =>
     }
   });
 
+
 const renderActiveNote = () => {
   hide(saveNoteBtn);
   hide(clearBtn);
@@ -77,6 +78,8 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value
   };
+  console.log("Title:", newNote.title);
+  console.log("Body:", newNote.text);
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
